@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+/* Set the width and color of the scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f0f0f0; /* You can change this color to any desired color */
+}
+
+/* Set the color of the scrollbar thumb (handle) */
+::-webkit-scrollbar-thumb {
+  background-color: gray; /* Change this color to the blue shade you want */
+  /* border-radius: 3cm;  */
+}
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.fc {
+  @apply flex items-center justify-center;
+}
+.fx-col-center {
+  @apply flex flex-col items-center justify-center;
+}
+.flex-col-start {
+  @apply flex flex-col items-start justify-start;
+}
+.fx-cl-sc {
+  @apply flex flex-col items-start justify-center;
+}
+.text-mb-center {
+  @apply text-center md:text-start;
+}
+.fb {
+  @apply flex items-center justify-between;
+}
+.fb-sm {
+  @apply hidden sm:flex items-center justify-between;
+}
+.fb-sm-h {
+  @apply flex items-center justify-between sm:hidden;
+}
+.fx-s {
+  @apply flex flex-row items-start justify-start;
+}
+.pad-x {
+  @apply px-[15px] sm:px-[50px];
+}
+.mb-hidden {
+  @apply hidden sm:flex;
+}
+
+.flex-1-2 {
+  @apply fb flex-col md:flex-row items-center justify-center;
+}
+
+.h-center {
+  @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+}
+
+.cols-2 {
+  @apply grid w-full grid-cols-1 md:grid-cols-2 gap-3;
+}
+
+.h1 {
+  @apply font-bold   text-[3.2rem] md:text-[4rem];
+}
+.h2 {
+  @apply font-bold text-[2.5rem]  md:text-[3.2rem];
+}
+.h3 {
+  @apply font-bold md:text-[2.5rem] text-[2rem];
+}
+.h4 {
+  @apply font-bold md:text-[2rem] text-[1.5rem];
+}
+.h5 {
+  @apply font-bold md:text-[2rem] text-[1.3rem];
+}
+.h6 {
+  @apply font-bold md:text-[1.3rem] text-[1.1rem];
+}
+.p {
+  @apply text-[1rem];
+}
+.text-blur {
+  @apply text-[1rem] text-black-200;
+}
+.sub-heading {
+  @apply font-semibold text-[1.1rem];
+}
+.text-hover {
+  @apply hover:text-blue hover:underline duration-300 transition-all ease-out;
+}
+.nav-h {
+  @apply h-[70px] md:h-[80px];
+}
+.page-h {
+  height: calc(100vh - 80px);
+}
+.link {
+  @apply text-black-500  p;
+}
+
+.logo {
+  @apply h-[30px] md:h-[40px] w-auto;
+}
+
+.outlined {
+  @apply rounded-sm text-sm flex flex-row py-2.5 px-5 
+  items-start justify-start border-[1px] border-solid border-blue
+   hover:bg-blue hover:text-white duration-300 transition-all ease-in-out;
+}
+.filled {
+  @apply rounded-sm text-sm flex flex-row py-2.5 px-5 items-start 
+  justify-start bg-blue text-white hover:bg-hover
+   hover:text-white duration-300 transition-all ease-in-out;
+}
+.cover-fx {
+  @apply w-screen h-screen fixed flex items-center justify-center top-0 left-0;
+}
+.menu {
+  @apply fc w-3/4 h-[450px] flex-col gap-5;
+
+  border: 1px solid rgba(255, 255, 255, 0.99);
+  background: rgba(255, 255, 255, 0.44);
+  backdrop-filter: blur(18.200000762939453px);
+}
+.product-card {
+  border: 1px solid rgba(255, 255, 255, 0.99);
+  background: rgba(255, 255, 255, 0.44);
+  backdrop-filter: blur(18.200000762939453px);
+}
+
+.nav-glass {
+  @apply border-t-0 product-card;
+}
+.border-bottom {
+  @apply border-b-[1px] border-solid border-black-200;
+}
