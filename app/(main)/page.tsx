@@ -10,9 +10,8 @@ export default async function Home() {
         <div className="fx-cl-sc text-mb-center h-full  gap-4 ">
           <h1 className="h1">Predict the price of your dream house</h1>
           <p className="p">
-            We provide a complete service for the sale, purchase or rental of
-            real estate. We have been operating in Madrid and Barcelona more
-            than 15 years.
+            Approximate the probable price of your dream house using our
+            prediction model.Register Now to get started for free.
           </p>
           <Link href="/search" className="w-full p-4 bg-grayish fb gap-2">
             <button className="p-2 p-blur w-full bg-white">

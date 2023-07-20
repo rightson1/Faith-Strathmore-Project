@@ -235,6 +235,7 @@ const Search = () => {
                   <th className="p-size p-2">Type</th>
                   <th className="p-size p-2">Sub Type</th>
                   <th className="p-size p-2">State</th>
+                  <th className="p-size p-2">Locacity</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-300">
@@ -244,6 +245,7 @@ const Search = () => {
                     <td className="p-size p-2">{house.type}</td>
                     <td className="p-size p-2">{house.sub_type}</td>
                     <td className="p-size p-2">{house.state}</td>
+                    <td className="p-size p-2">{house.locality}</td>
                   </tr>
                 ))}
               </tbody>

@@ -5,35 +5,15 @@ import { collection, addDoc, updateDoc, doc } from "firebase/firestore";
 import { db, storage } from "@/utils/firebase";
 import { toast } from "react-hot-toast";
 import { ref, listAll, getDownloadURL } from "firebase/storage";
+import { useRouter } from "next/navigation";
 
 const Profile = () => {
-  const { user, fetchUser } = useAuth();
+  const { user, fetchUser, logout } = useAuth();
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [phone, setPhone] = useState("");
+  const router = useRouter();
   const [admin, setAdmin] = useState("false");
-  const [imageUrls, setImageUrls] = useState<string[]>([]); // Provide explicit type
-
-  useEffect(() => {
-    const fetchImageUrls = async () => {
-      try {
-        const imagesRef = ref(storage, "/"); // Root reference of Firebase Storage
-        const imageList = await listAll(imagesRef);
-
-        const urls = await Promise.all(
-          imageList.items.map((itemRef) => getDownloadURL(itemRef))
-        );
-
-        setImageUrls(urls);
-      } catch (error) {
-        console.error(error);
-        toast.error("Error fetching image URLs");
-      }
-    };
-
-    fetchImageUrls();
-  }, []);
-  console.log(imageUrls);
 
   useEffect(() => {
     if (user) {
@@ -64,6 +44,19 @@ const Profile = () => {
       });
     }
   };
+
+  const handleLogout = async () => {
+    const loggin = async () => {
+      await logout();
+      router.push("/login");
+    };
+    toast.promise(loggin(), {
+      loading: "Logging Out...",
+      success: "Logged Out",
+      error: "Error Logging Out",
+    });
+  };
+
   if (!user) return <h1 className="text-center">Loading....</h1>;
   return (
     <section className="mt-10 pad-x">
@@ -167,7 +160,14 @@ const Profile = () => {
               Logged In
             </label>
           </div>
-          <div className="w-full">
+          <div className="w-full fb gap-5">
+            <button
+              className="w-full bg-indigo-500 text-white p-2 rounded-md"
+              type="button"
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
             <button
               className="w-full bg-indigo-500 text-white p-2 rounded-md"
               type="submit"

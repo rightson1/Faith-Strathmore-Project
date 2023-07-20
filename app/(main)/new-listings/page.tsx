@@ -1,9 +1,24 @@
 "use client";
 import React, { useEffect } from "react";
+import axios from "axios";
 import { categories, priceQualifier, sub_type, types } from "@/constants";
+import toast from "react-hot-toast";
 const NewItem = () => {
   const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const payload = Object.fromEntries(data.entries());
+    const update = async () => {
+      axios
+        .post("http://127.0.0.1:5000", payload)
+        .then((res) => {
+          const predictionValue: number = JSON.parse(res.data.prediction)[0];
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+    toast.promise(update(), toastStates);
   };
 
   return (
@@ -187,3 +202,9 @@ const NewItem = () => {
 };
 
 export default NewItem;
+
+const toastStates = {
+  loading: "Updating...",
+  success: "New Listing Added",
+  error: "New Listing Added",
+};

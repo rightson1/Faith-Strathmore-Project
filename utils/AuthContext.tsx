@@ -109,7 +109,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const logout = async () => {
     await auth.signOut();
     localStorage.removeItem("user");
-    router.push("/");
   };
 
   return (

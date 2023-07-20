@@ -5,12 +5,12 @@ import { getAuth } from "firebase/auth";
 import "firebase/messaging";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAZEmSpXUE5899Y_aAMd-7xBm3qLYq8xms",
-  authDomain: "faith-d3f59.firebaseapp.com",
-  projectId: "faith-d3f59",
-  storageBucket: "faith-d3f59.appspot.com",
-  messagingSenderId: "554769999454",
-  appId: "1:554769999454:web:63cd051f87e19b072776cf",
+  apiKey: "AIzaSyDnk7hp4tswTP7hZRnlCpqBKL9NX52FNwM",
+  authDomain: "prediction-price.firebaseapp.com",
+  projectId: "prediction-price",
+  storageBucket: "prediction-price.appspot.com",
+  messagingSenderId: "976981622573",
+  appId: "1:976981622573:web:340a6eb4f2a8cf289f1da4",
 };
 
 const app = initializeApp(firebaseConfig, {});

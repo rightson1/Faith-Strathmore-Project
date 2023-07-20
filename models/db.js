@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 // const MONGO_URL = "mongodb://0.0.0.0:27017/hussle";
 const MONGO_URL =
-  "mongodb+srv://Rightson:Rightson@nodeexpressproject.afbca.mongodb.net/faith?retryWrites=true&w=majority";
+  "mongodb+srv://Faith:17287085@cluster0.v9bzuf0.mongodb.net/?retryWrites=true&w=majority";
 
 if (!MONGO_URL) {
   throw new Error(

@@ -9,6 +9,7 @@ export async function GET(req: NextRequest) {
     await db();
     let price: string | null | number = req.nextUrl.searchParams.get("price");
     price = price ? parseInt(price) : 0;
+    if (!price) return NextResponse.json([]);
 
     const lowerPriceLimit = price - 5000;
     const upperPriceLimit = price + 5000;

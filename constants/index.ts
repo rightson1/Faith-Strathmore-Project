@@ -1,4 +1,4 @@
-import { houseTypes, mobileMenuLinks, navLinksTypes } from "@/types";
+import { mobileMenuLinks, navLinksTypes } from "@/types";
 
 export const mobileLinks: Array<navLinksTypes> = [
   {

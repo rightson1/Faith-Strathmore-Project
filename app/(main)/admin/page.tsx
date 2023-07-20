@@ -87,7 +87,7 @@ const Profile = () => {
                           } text-white p-2 rounded-md`}
                           type="button"
                         >
-                          {member.admin ? "Remove Admin" : "Make Admin"}
+                          {member.admin ? "Admin" : "User"}
                         </button>
                       </td>
                     </tr>

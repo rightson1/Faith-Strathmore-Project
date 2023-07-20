@@ -61,7 +61,8 @@ export async function GET() {
   try {
     const res = await cvsRead();
     await db();
-    const houses = await House.insertMany(res.slice(0, 200));
+    console.log("Holla");
+    const houses = await House.insertMany(res.slice(0, 1000));
     return NextResponse.json(houses);
   } catch (e) {
     console.log(e);
